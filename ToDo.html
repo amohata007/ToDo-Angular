@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="ToDo.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="ToDo.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body class="container" ng-app="myApp" ng-controller="todoCtrl">
+
+<h2>My To-do List</h2>
+
+<form ng-submit="todoAdd()">
+    <input type="text" ng-model="todoInput" size="50" placeholder="Add New">
+    <input class="btn btn-success" type="submit" value="Add New">
+</form>
+
+<br>
+
+<div ng-repeat="x in todoList">
+    <input type="checkbox" ng-model="x.done"> <span class="task" ng-bind="x.todoText"></span>
+</div>
+
+<p><button class="btn btn-danger" ng-click="remove()">Remove marked</button></p>
+
+</br>
+</br>
+</br>    
+</body>
+</html>
